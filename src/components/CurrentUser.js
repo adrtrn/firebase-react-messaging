@@ -1,27 +1,27 @@
-import React, { PropTypes } from 'react';
-import './CurrentUser.css';
+import React, { PropTypes } from 'react'
+import './CurrentUser.css'
 
 const CurrentUser = ({ auth, signOut }) => {
   return (
-    <div className="CurrentUser">
+    <div className='CurrentUser'>
       <img
-        className="CurrentUser--photo"
-        src={ auth.photoURL }
-        alt={ auth.displayName }
+        className='CurrentUser--photo'
+        src={auth.photoURL}
+        alt={auth.displayName}
       />
-      <div className="CurrentUser--identification">
-        <h3 className="CurrentUser--displayName">{ auth.displayName }</h3>
-        <p className="CurrentUser--email">{ auth.email }</p>
+      <div className='CurrentUser--identification'>
+        <h3 className='CurrentUser--displayName'>{ auth.displayName }</h3>
+        <p className='CurrentUser--email'>{ auth.email }</p>
         <button
-          className="CurrentUser--signout"
+          className='CurrentUser--signout'
           onClick={signOut}
         >
           Sign Out
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 CurrentUser.propTypes = {
   auth: PropTypes.shape({
@@ -31,6 +31,6 @@ CurrentUser.propTypes = {
     uid: PropTypes.string.isRequired
   }),
   signOut: PropTypes.func.isRequired
-};
+}
 
-export default CurrentUser;
+export default CurrentUser

@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
-import Message from './Message';
-import map from 'lodash/map';
-import './Messages.css';
+import React, { PropTypes } from 'react'
+import Message from './Message'
+import map from 'lodash/map'
+import './Messages.css'
 
 const Messages = ({ auth, messages, users, deleteMessage }) => (
-  <section className="Messages">
+  <section className='Messages'>
     {
       map(messages, (message, key) => (
         <Message
@@ -18,13 +18,13 @@ const Messages = ({ auth, messages, users, deleteMessage }) => (
       ))
     }
   </section>
-);
+)
 
 Messages.propTypes = {
   auth: PropTypes.object,
   messages: PropTypes.object,
   users: PropTypes.object,
   deleteMessage: PropTypes.func
-};
+}
 
-export default Messages;
+export default Messages

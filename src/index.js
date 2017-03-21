@@ -1,16 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { applyMiddleware, compose, createStore } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import reducer from './reducers';
-import initialState from './initial-state';
-import Application from './containers/ApplicationContainer';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { applyMiddleware, compose, createStore } from 'redux'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+import reducer from './reducers'
+import initialState from './initial-state'
+import Application from './containers/ApplicationContainer'
+import './index.css'
 
-const middleware = [ thunk ];
-const enhancers = [];
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import { startListeningToAuthChanges } from './actions/auth'
+import { startListeningForUser } from './actions/users'
+import { startListeningForMessages } from './actions/messages'
+
+
+const middleware = [ thunk ]
+const enhancers = []
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
   reducer,
@@ -19,11 +24,15 @@ const store = createStore(
     applyMiddleware(...middleware),
     ...enhancers
   )
-);
+)
+
+store.dispatch(startListeningToAuthChanges())
+store.dispatch(startListeningForUser())
+store.dispatch(startListeningForMessages())
 
 ReactDOM.render(
   <Provider store={store}>
     <Application />
   </Provider>,
   document.getElementById('root')
-);
+)

@@ -1,17 +1,17 @@
-import firebase from 'firebase';
+import firebase from 'firebase'
 
 const config = {
-  apiKey: 'AIzaSyAhWMYWhBG2UvsNMZ-qVLbaqVZ5aTzwsNU',
-  authDomain: 'hot-takes.firebaseapp.com',
-  databaseURL: 'https://hot-takes.firebaseio.com',
-  storageBucket: 'hot-takes.appspot.com',
-  messagingSenderId: '823384132241'
-};
+  apiKey: "AIzaSyB2GZNCK_4h05wrb7m-Yb4tsOkUSM1Rhck",
+  authDomain: "react-messenger-72394.firebaseapp.com",
+  databaseURL: "https://react-messenger-72394.firebaseio.com",
+  storageBucket: "react-messenger-72394.appspot.com",
+  messagingSenderId: "791809663148"
+}
 
-firebase.initializeApp(config);
+firebase.initializeApp(config)
 
-export default firebase;
+export default firebase
 
-export const database = firebase.database();
-export const auth = firebase.auth();
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const database = firebase.database()
+export const auth = firebase.auth()
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider()

@@ -1,23 +1,23 @@
-import React, { PropTypes } from 'react';
-import classNames from 'classnames';
-import './Message.css';
+import React, { PropTypes } from 'react'
+import classNames from 'classnames'
+import './Message.css'
 
 const Message = ({ belongsToCurrentUser, content, id, user, deleteMessage }) => (
   <article className={classNames('Message', { 'current-user': belongsToCurrentUser })}>
-    <div className="Message--avatar">
+    <div className='Message--avatar'>
       <img
-        role="presentation"
+        role='presentation'
         src={user.photoURL}
       />
     </div>
-    <div className="Message--main">
-      <h4 className="Message--user">{ user.displayName }</h4>
-      <p className="Message--content">{ content }</p>
-      <footer className="Message--controls">
+    <div className='Message--main'>
+      <h4 className='Message--user'>{ user.displayName }</h4>
+      <p className='Message--content'>{ content }</p>
+      <footer className='Message--controls'>
         {
           belongsToCurrentUser &&
           <button
-            className="small destructive"
+            className='small destructive'
             onClick={deleteMessage}
           >
             Delete
@@ -26,7 +26,7 @@ const Message = ({ belongsToCurrentUser, content, id, user, deleteMessage }) => 
       </footer>
     </div>
   </article>
-);
+)
 
 Message.propTypes = {
   belongsToCurrentUser: PropTypes.bool,
@@ -34,7 +34,7 @@ Message.propTypes = {
   deleteMessage: PropTypes.func,
   id: PropTypes.string,
   timeStamp: PropTypes.number,
-  user: PropTypes.object,
-};
+  user: PropTypes.object
+}
 
-export default Message;
+export default Message

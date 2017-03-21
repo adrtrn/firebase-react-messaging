@@ -1,12 +1,12 @@
-import initialState from '../initial-state';
+import initialState from '../initial-state'
 
-export default function newMessageReducer(state = initialState.newMessage, action) {
-  switch(action.type) {
+export default function newMessageReducer (state = initialState.newMessage, action) {
+  switch (action.type) {
     case 'UPDATE_NEW_MESSAGE':
-      return action.content;
+      return action.content
     case 'CLEAR_NEW_MESSAGE':
-      return '';
+      return ''
     default:
-      return state;
+      return state
   }
 }
